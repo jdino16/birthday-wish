@@ -48,7 +48,7 @@ const App = () => {
                 const newHeart = {
                     id: Date.now(),
                     left: `${Math.random() * 90}%`,
-                    emoji: ['❤️', '💖', '💘', '💝', '💕'][Math.floor(Math.random() * 5)]
+                    emoji: ['🤍', '💎', '🫶', '✨', '💿'][Math.floor(Math.random() * 5)]
                 };
                 setProposalHearts(prev => [...prev, newHeart]);
                 setTimeout(() => {
@@ -99,7 +99,7 @@ const App = () => {
                         <h1 className="neon-text-pink shimmer-text glow-pulse wobble" style={{ fontFamily: "'Dancing Script', cursive", fontSize: 'clamp(2.5rem, 8vw, 4rem)', marginBottom: '0.5rem', lineHeight: 1 }}>
                             Happy Birthday Lavan!
                         </h1>
-                        <div className="pulse heartbeat-intense" style={{ fontSize: '3rem', marginBottom: '1.5rem' }}>🎉❤️</div>
+                        <div className="pulse heartbeat-intense" style={{ fontSize: '3rem', marginBottom: '1.5rem' }}>🎉🤍</div>
 
                         {!canStart ? (
                             <div className="fade-in glass-card bounce-in" style={{ width: '90%', maxWidth: '480px', padding: '2.5rem', borderRadius: '40px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -130,9 +130,9 @@ const App = () => {
 
                         <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(1rem, 3vh, 2rem)' }}>
                             {[
-                                { icon: "❤️", text: "You make me smile every day 😍", color: "#f472b6", animation: "slide-left", delay: "0.5s" },
+                                { icon: "🤍", text: "You make me smile every day 😍", color: "#f472b6", animation: "slide-left", delay: "0.5s" },
                                 { icon: "💎", text: "Everything is better with you 💎", color: "#22d3ee", animation: "slide-right", delay: "1.2s" },
-                                { icon: "✨", text: "Every moment with you is magic ✨", color: "#fbbf24", animation: "slide-left", delay: "1.9s" }
+                                { icon: "🫶", text: "Every moment with you is magic ✨", color: "#fbbf24", animation: "slide-left", delay: "1.9s" }
                             ].map((moment, i) => (
                                 <div key={i} className={`glass-card ${moment.animation}`} style={{
                                     animationDelay: moment.delay,
@@ -167,7 +167,7 @@ const App = () => {
                         ))}
 
                         <h1 className="neon-text-pink heartbeat-intense glow-pulse wobble" style={{ marginBottom: '2rem', fontSize: 'clamp(2.2rem, 7vw, 4rem)' }}>
-                            Will you be mine forever? <span className="heartbeat-intense">💍</span>
+                            Will you be mine forever? <span className="heartbeat-intense">🤍</span>
                         </h1>
 
                         <div style={{ width: '100%', maxWidth: '650px', margin: '0 auto', zIndex: 30, position: 'relative' }} className="bounce-in">
@@ -188,11 +188,11 @@ const App = () => {
                                     boxShadow: '0 0 50px rgba(244, 114, 182, 0.15)'
                                 }}>
                                     <h2 className="shimmer-text wobble" style={{ fontSize: 'clamp(1rem, 4vw, 1.5rem)', color: '#ffffff', fontWeight: '900', marginBottom: '0.8rem', textShadow: '0 0 10px #f472b6' }}>
-                                        I LOVE YOU LAVAN! ❤️ <br />
-                                        En Uyirae... 💕
+                                        I LOVE YOU LAVAN! 🤍 <br />
+                                        En Uyirae... 🫶
                                     </h2>
 
-                                    <div className="pulse heartbeat-intense" style={{ fontSize: 'clamp(2.5rem, 10vw, 4rem)', margin: '0.5rem 0' }}>💍✨</div>
+                                    <div className="pulse heartbeat-intense" style={{ fontSize: 'clamp(2.5rem, 10vw, 4rem)', margin: '0.5rem 0' }}>🫶💎</div>
 
                                     <div style={{ display: 'flex', gap: '1.2rem', justifyContent: 'center', alignItems: 'center', marginTop: '1.2rem', width: '100%' }}>
                                         <button className="btn-primary heartbeat-intense" onClick={nextStep} style={{ padding: '0.8rem 2rem', fontSize: '1.1rem', margin: 0 }}>
@@ -226,11 +226,11 @@ const App = () => {
                 {currentPage === 4 && (
                     <div className="fade-in" style={{ margin: '0 auto' }}>
                         <h1 className="neon-text-gold pulse shimmer-text glow-pulse" style={{ fontSize: 'clamp(2.5rem, 8vw, 4rem)', marginBottom: '1.5rem' }}>
-                            You Made Me the Happiest! 😍💖
+                            You Made Me the Happiest! 🫶🤍
                         </h1>
                         <div className="float-3d" style={{ fontSize: 'clamp(60px, 15vw, 100px)', margin: '2rem 0' }}>🎂🍰🥂</div>
                         <p className="wobble" style={{ fontSize: 'clamp(1.4rem, 5vw, 2rem)', color: '#fff', textShadow: '0 2px 15px rgba(0,0,0,0.5)', fontWeight: '600' }}>
-                            Thank you for saying YES! 💕
+                            Thank you for saying YES! 🤍
                         </p>
                         <button className="btn-primary heartbeat-intense" onClick={nextStep} style={{ marginTop: '3.5rem' }}>
                             Next → Our Future Plans ✨
@@ -245,8 +245,8 @@ const App = () => {
                         <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(1rem, 3vh, 2rem)' }}>
                             {[
                                 { text: "Travel the world", icon: "🌍✈️", color: '#f472b6', delay: '0.2s', side: 'left' },
-                                { text: "Celebrate every birthday", icon: "❤️🎂", color: '#fbbf24', delay: '0.7s', side: 'right' },
-                                { text: "Laugh, love, and grow together", icon: "💕🌱", color: '#22d3ee', delay: '1.2s', side: 'left' }
+                                { text: "Celebrate every birthday", icon: "🤍🎂", color: '#fbbf24', delay: '0.7s', side: 'right' },
+                                { text: "Laugh, love, and grow together", icon: "🫶🌱", color: '#22d3ee', delay: '1.2s', side: 'left' }
                             ].map((plan, i) => (
                                 <div
                                     key={i}
@@ -280,7 +280,7 @@ const App = () => {
                 {/* Page 6: Messages & Wishes */}
                 {currentPage === 6 && (
                     <div className="fade-in" style={{ width: '100%', maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                        <h1 className="neon-text-gold shimmer-text glow-pulse wobble" style={{ marginBottom: 'clamp(1rem, 3vh, 2rem)', fontSize: 'clamp(1.6rem, 7vw, 3rem)' }}>Messages & Birthday Wishes 💖</h1>
+                        <h1 className="neon-text-gold shimmer-text glow-pulse wobble" style={{ marginBottom: 'clamp(1rem, 3vh, 2rem)', fontSize: 'clamp(1.6rem, 7vw, 3rem)' }}>Messages & Birthday Wishes 🤍</h1>
 
                         <div style={{
                             display: 'grid',
@@ -290,12 +290,12 @@ const App = () => {
                             perspective: '1000px'
                         }}>
                             {[
-                                { msg: "The First of Many ✨", sub: "Namma serndhu celebrate panra intha 1st birthday oru azhagana aarambam! Enikume neenga en pakathula irukanum... ❤️", color: "#f472b6", icon: "🌸" },
+                                { msg: "The First of Many ✨", sub: "Namma serndhu celebrate panra intha 1st birthday oru azhagana aarambam! Enikume neenga en pakathula irukanum... 🤍", color: "#f472b6", icon: "🌸" },
                                 { msg: "You are My Gift 🎁", sub: "Unga anbu en vazhvil kidaitha periya pokkisham. Intha azhagana bond ennikume kalaiyadha oru kavithai madhiri irukkum! 💎", color: "#fbbf24", icon: "💎" },
-                                { msg: "Pure Magic! ✨", sub: "Every single moment with you is literal magic. Everything with you feels like a beautiful dream come true! 💖", color: "#22d3ee", icon: "🌟" },
-                                { msg: "My Daily Smile 😍", sub: "Unga sirippu dhaan enna daily happy-aa vachirukku. You make me smile every single day, Lavan! 💖", color: "#ff00ff", icon: "💖" },
-                                { msg: "Soulful Connection 💞", sub: "Everything feels so perfect between us. Namma rendu peroda intha bond ennikume kalaiyadha oru divine connection! ✨", color: "#4ade80", icon: "🍀" },
-                                { msg: "My Forever Wish 💖", sub: "Inum neraya memories serndhu create pannanum! You are my forever wish come true. 💕✨", color: "#f43f5e", icon: "💝" }
+                                { msg: "Pure Magic! ✨", sub: "Every single moment with you is literal magic. Everything with you feels like a beautiful dream come true! 🫶", color: "#22d3ee", icon: "🌟" },
+                                { msg: "My Daily Smile 😍", sub: "Unga sirippu dhaan enna daily happy-aa vachirukku. You make me smile every single day, Lavan! 🤍", color: "#ff00ff", icon: "🤍" },
+                                { msg: "Soulful Connection 💞", sub: "Everything feels so perfect between us. Namma rendu peroda intha bond ennikume kalaiyadha oru divine connection! 💎", color: "#4ade80", icon: "🍀" },
+                                { msg: "My Forever Wish 🫶", sub: "Inum neraya memories serndhu create pannanum! You are my forever wish come true. 🤍✨", color: "#f43f5e", icon: "🫶" }
                             ].map((item, i) => (
                                 <div
                                     key={i}
@@ -349,7 +349,7 @@ const App = () => {
                             boxShadow: '0 30px 60px rgba(0,0,0,0.4), inset 0 0 40px rgba(255,255,255,0.05)'
                         }}>
                             <h1 className="neon-text-gold shimmer-text glow-pulse wobble" style={{ fontSize: 'clamp(2rem, 8vw, 3.8rem)', marginBottom: '1.5rem', textAlign: 'center', lineHeight: 1.1 }}>
-                                Thank You for Being You ❤️
+                                Thank You for Being You 🤍
                             </h1>
 
                             <div className="bounce-in" style={{ marginBottom: '2.5rem', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -358,16 +358,16 @@ const App = () => {
                                 </p>
                                 <div style={{ transform: 'scale(clamp(0.8, 5vw, 1.1))' }}>
                                     <ScratchCard
-                                        message="LAVAN, YOU ARE MY FOREVER! 💞✨"
+                                        message="LAVAN, YOU ARE MY FOREVER! 🫶✨"
                                         onComplete={() => setShowFinalSecret(true)}
                                     />
                                 </div>
                             </div>
 
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', marginTop: '0.5rem', fontSize: 'clamp(1rem, 4.5vw, 1.3rem)', color: '#fff', fontWeight: '500', textAlign: 'center', width: '100%' }}>
-                                <p className="fade-in shimmer-text" style={{ animationDelay: '1s' }}>You make me smile every day 😍</p>
+                                <p className="fade-in shimmer-text" style={{ animationDelay: '1s' }}>You make me smile every day 🫶</p>
                                 <p className="fade-in shimmer-text" style={{ animationDelay: '2s' }}>✨ Every moment with you is magic ✨</p>
-                                <p className="fade-in shimmer-text" style={{ animationDelay: '3s' }}>You are the best thing that ever happened to me ❤️</p>
+                                <p className="fade-in shimmer-text" style={{ animationDelay: '3s' }}>You are the best thing that ever happened to me 🤍</p>
                             </div>
 
                             <div className="float-3d" style={{ margin: '2rem 0', fontSize: 'clamp(3rem, 10vw, 4rem)' }}>🎂🎈✨</div>
@@ -397,20 +397,20 @@ const App = () => {
                     textAlign: 'center',
                     padding: '2rem'
                 }}>
-                    <div className="glow-pulse float-3d" style={{ fontSize: 'clamp(50px, 15vw, 120px)', marginBottom: '2rem' }}>💎💍💖</div>
+                    <div className="glow-pulse float-3d" style={{ fontSize: 'clamp(50px, 15vw, 120px)', marginBottom: '2rem' }}>💎🫶🤍</div>
                     <h1 className="neon-text-pink shimmer-text wobble" style={{ fontSize: 'clamp(2.5rem, 10vw, 4rem)', marginBottom: '1.5rem', fontWeight: '900' }}>
                         I LOVE YOU FOREVER!
                     </h1>
                     <div style={{ padding: '0 1rem' }}>
                         <p className="heartbeat-intense" style={{ fontSize: 'clamp(1.2rem, 5vw, 1.8rem)', color: '#fff', textShadow: '0 0 10px #ff00ff', lineHeight: 1.4, marginBottom: '1rem' }}>
-                            Lavan, you are my world, my happiness, and my everything... 💕✨
+                            Lavan, you are my world, my happiness, and my everything... 🤍✨
                         </p>
                         <p className="shimmer-text" style={{ fontSize: 'clamp(1rem, 4vw, 1.4rem)', color: '#cbd5e1', fontStyle: 'italic' }}>
-                            "I promise to love you more today than yesterday, but not as much as tomorrow." ❤️💍
+                            "I promise to love you more today than yesterday, but not as much as tomorrow." 🤍💎
                         </p>
                     </div>
                     <button className="btn-primary heartbeat-intense" onClick={() => setShowFinalSecret(false)} style={{ marginTop: '3rem', padding: '1.2rem 3.5rem', fontSize: '1.2rem', borderRadius: '50px' }}>
-                        Close with Love ❤️
+                        Close with Love 🤍
                     </button>
                 </div>
             )}

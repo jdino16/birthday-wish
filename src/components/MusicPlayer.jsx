@@ -29,17 +29,18 @@ const MusicPlayer = () => {
                     justifyContent: 'center',
                     alignItems: 'center',
                     fontSize: '20px',
-                    boxShadow: isPlaying ? '0 0 15px #ff00ff' : 'none',
+                    boxShadow: isPlaying ? '0 0 15px rgba(255, 255, 255, 0.5)' : 'none',
                     transition: 'all 0.3s ease'
                 }}
                 className={isPlaying ? 'pulse' : ''}
             >
-                {isPlaying ? '🎵' : '🔇'}
+                {isPlaying ? '🎵' : '🤍'}
             </button>
             <audio
                 ref={audioRef}
                 loop
-                src="https://docs.google.com/uc?id=1w_NXPwKVmo09HvW01Z1iTCR3zHE4iPxW&export=download" // Custom Audio (Stable Link)
+                crossOrigin="anonymous"
+                src="https://drive.google.com/uc?export=download&id=1w_NXPwKVmo09HvW01Z1iTCR3zHE4iPxW" // Custom Audio (Direct Link)
             />
         </div>
     );

@@ -68,7 +68,7 @@ const VirtualCake = ({ onAllOut }) => {
 
             {/* Lavan Name Label */}
             <div className="cake-name-plate">
-                <span className="gold-shimmer">LAVAN ❤️</span>
+                <span className="gold-shimmer">LAVAN 🤍</span>
             </div>
         </div>
     );
