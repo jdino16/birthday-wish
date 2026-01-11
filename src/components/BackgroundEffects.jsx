@@ -5,7 +5,7 @@ const BackgroundEffects = () => {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
     useEffect(() => {
-        const emojis = ['✨', '💫', '🌟', '💎', '🌸', '🍭', '💖', '⭐', '❄️', '🎈', '🍬', '🥂', '🎭', '🎡'];
+        const emojis = ['🤍', '💎', '🫶', '✨', '💫', '🌟', '⭐', '❄️', '🎈', '🍬', '🥂', '🎭', '🎡', '🍭'];
         const newElements = Array.from({ length: 50 }).map((_, i) => ({
             id: i,
             emoji: emojis[Math.floor(Math.random() * emojis.length)],
