@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import BackgroundEffects from './components/BackgroundEffects';
 import Confetti from './components/Confetti';
 import MusicPlayer from './components/MusicPlayer';
+import MagicTrail from './components/MagicTrail';
+import Starfield from './components/Starfield';
 import VirtualCake from './components/VirtualCake';
 import CurtainReveal from './components/CurtainReveal';
 import ScratchCard from './components/ScratchCard';
@@ -71,6 +73,8 @@ const App = () => {
 
     return (
         <div onClick={addSparkle} style={{ width: '100%', minHeight: '100dvh', position: 'relative' }}>
+            <Starfield />
+            <MagicTrail />
             <BackgroundEffects />
             <Balloons />
             <MusicPlayer />
@@ -324,38 +328,53 @@ const App = () => {
 
                 {/* Page 7: Final Thank You */}
                 {currentPage === 7 && (
-                    <div className="fade-in glass-card bounce-in" style={{
-                        background: 'linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(244, 114, 182, 0.1))',
-                        padding: '2.5rem',
-                        borderRadius: '40px',
-                        margin: '1rem auto',
+                    <div className="fade-in" style={{
+                        width: '100%',
+                        minHeight: '80vh',
                         display: 'flex',
                         flexDirection: 'column',
+                        justifyContent: 'center',
                         alignItems: 'center',
-                        width: '90%',
-                        maxWidth: '500px'
+                        gap: '2rem'
                     }}>
-                        <h1 className="neon-text-gold shimmer-text glow-pulse wobble" style={{ fontSize: 'clamp(2.5rem, 8vw, 3.5rem)', marginBottom: '2rem' }}>Thank You for Being You ❤️</h1>
+                        <div className="glass-card bounce-in" style={{
+                            background: 'linear-gradient(135deg, rgba(251, 191, 36, 0.12), rgba(244, 114, 182, 0.12))',
+                            padding: 'clamp(2rem, 5vh, 4rem)',
+                            borderRadius: '50px',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            width: 'min(95%, 600px)',
+                            border: '2px solid rgba(255, 255, 255, 0.15)',
+                            boxShadow: '0 30px 60px rgba(0,0,0,0.4), inset 0 0 40px rgba(255,255,255,0.05)'
+                        }}>
+                            <h1 className="neon-text-gold shimmer-text glow-pulse wobble" style={{ fontSize: 'clamp(2rem, 8vw, 3.8rem)', marginBottom: '1.5rem', textAlign: 'center', lineHeight: 1.1 }}>
+                                Thank You for Being You ❤️
+                            </h1>
 
-                        <div className="bounce-in" style={{ marginBottom: '2rem', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                            <p style={{ marginBottom: '1.5rem', color: '#fff', fontSize: '1.2rem', fontWeight: '600' }}>I have a last secret for you... Scratch it! 🤫</p>
-                            <ScratchCard
-                                message="LAVAN, YOU ARE MY FOREVER! 💞✨"
-                                onComplete={() => setShowFinalSecret(true)}
-                            />
+                            <div className="bounce-in" style={{ marginBottom: '2.5rem', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                                <p style={{ marginBottom: '1.5rem', color: '#fff', fontSize: 'clamp(1rem, 4vw, 1.3rem)', fontWeight: '600', textAlign: 'center' }}>
+                                    I have a last secret for you... Scratch it! 🤫
+                                </p>
+                                <div style={{ transform: 'scale(clamp(0.8, 5vw, 1.1))' }}>
+                                    <ScratchCard
+                                        message="LAVAN, YOU ARE MY FOREVER! 💞✨"
+                                        onComplete={() => setShowFinalSecret(true)}
+                                    />
+                                </div>
+                            </div>
+
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', marginTop: '0.5rem', fontSize: 'clamp(1.1rem, 4.5vw, 1.4rem)', color: '#fff', fontWeight: '500', textAlign: 'center' }}>
+                                <p className="fade-in shimmer-text" style={{ animationDelay: '1s' }}>Thank you for every moment 💕</p>
+                                <p className="fade-in shimmer-text" style={{ animationDelay: '2s' }}>You are my greatest gift 🎁</p>
+                            </div>
+
+                            <div className="float-3d" style={{ margin: '2rem 0', fontSize: 'clamp(3rem, 10vw, 4rem)' }}>🎂🎈✨</div>
+
+                            <button className="btn-primary heartbeat-intense" onClick={reset} style={{ width: 'min(100%, 250px)', fontSize: '1.3rem' }}>
+                                Replay 🎁
+                            </button>
                         </div>
-
-
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '1.5rem', fontSize: '1.3rem', color: '#fff', fontWeight: '500' }}>
-                            <p className="fade-in shimmer-text" style={{ animationDelay: '1s' }}>Thank you for every moment 💕</p>
-                            <p className="fade-in shimmer-text" style={{ animationDelay: '2s' }}>You are my greatest gift 🎁</p>
-                        </div>
-
-                        <div className="float-3d" style={{ margin: '2.5rem 0', fontSize: '3rem' }}>🎂🎈✨</div>
-
-                        <button className="btn-primary heartbeat-intense" onClick={reset}>
-                            Replay 🎁
-                        </button>
                     </div>
                 )}
             </div>
