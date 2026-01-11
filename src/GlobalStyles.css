@@ -394,11 +394,11 @@ body {
   z-index: 15;
 }
 
-/* --- Premium Virtual Cake Styles --- */
-.cake-container {
+/* --- Rock-Solid Premium Virtual Cake --- */
+.cake-stage {
   position: relative;
-  width: 280px;
-  height: 250px;
+  width: 320px;
+  height: 280px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -408,98 +408,112 @@ body {
 }
 
 .cake-plate {
-  width: 320px;
-  height: 20px;
-  background: linear-gradient(to bottom, #e2e8f0, #94a3b8);
+  width: 100%;
+  height: 25px;
+  background: linear-gradient(to bottom, #f1f5f9, #cbd5e1);
   border-radius: 50%;
   position: absolute;
-  bottom: -5px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  bottom: 0;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
 
-.cake-layers {
-  width: 220px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 2;
-  position: relative;
-}
-
-.layer {
+.cake-body-stack {
   width: 100%;
-  border-radius: 15px 15px 5px 5px;
+  display: flex;
+  flex-direction: column-reverse;
+  /* Stacks bottom to top visually in JSX order */
+  align-items: center;
+  z-index: 5;
+  margin-bottom: 5px;
+}
+
+.cake-layer {
   position: relative;
-  box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 15px 15px 5px 5px;
+  box-shadow: inset 0 3px 6px rgba(255, 255, 255, 0.2), 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.layer-top {
-  height: 45px;
-  background: #ffffff;
-  width: 170px;
-  margin-top: 0;
-  border-radius: 15px 15px 0 0;
-  overflow: visible;
-  z-index: 10;
+.layer-base {
+  width: 260px;
+  height: 70px;
+  background: linear-gradient(to right, #db2777, #f472b6, #db2777);
+  z-index: 6;
 }
 
-.layer-middle {
+.layer-mid {
+  width: 210px;
   height: 55px;
   background: linear-gradient(to right, #be185d, #ec4899, #be185d);
-  width: 210px;
-  margin-top: -5px;
-  z-index: 5;
+  z-index: 7;
+  margin-bottom: -5px;
 }
 
-.layer-bottom {
-  height: 65px;
-  background: linear-gradient(to right, #db2777, #f472b6, #db2777);
-  width: 250px;
-  margin-top: -5px;
-  z-index: 1;
+.layer-peak {
+  width: 160px;
+  height: 45px;
+  background: #ffffff;
+  z-index: 8;
+  margin-bottom: -5px;
+  border-radius: 15px 15px 0 0;
 }
 
-.icing-drips {
+.frosting-top {
   position: absolute;
-  top: 40px;
+  top: 0;
   width: 100%;
-  height: 20px;
-  display: flex;
-  z-index: 15;
+  height: 10px;
+  background: #ffffff;
+  border-radius: 15px 15px 0 0;
 }
 
-.drip {
-  width: 17px;
+.frosting-drips {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
   height: 25px;
-  background: white;
-  border-radius: 0 0 12px 12px;
-  animation: drip-grow 3s infinite ease-in-out;
+  display: flex;
 }
 
-@keyframes drip-grow {
+.frosting-drip {
+  width: 10%;
+  height: 20px;
+  background: #ffffff;
+  border-radius: 0 0 15px 15px;
+  animation: drip-pulse 3s infinite ease-in-out;
+}
+
+@keyframes drip-pulse {
 
   0%,
   100% {
-    height: 20px;
+    height: 18px;
   }
 
   50% {
-    height: 35px;
+    height: 28px;
   }
 }
 
-.cherry {
+.cherry-row {
+  position: absolute;
+  top: -12px;
+  width: 100%;
+  height: 20px;
+  z-index: 10;
+}
+
+.cherry-item {
   position: absolute;
   width: 18px;
   height: 18px;
   background: radial-gradient(circle at 30% 30%, #ff4d4d, #990000);
   border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  z-index: 12;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-.cherry::after {
+.cherry-item::after {
   content: '';
   position: absolute;
   top: -6px;
@@ -507,81 +521,93 @@ body {
   width: 2px;
   height: 10px;
   background: #2d5a27;
-  transform: rotate(20deg);
+  transform: rotate(25deg);
 }
 
-.candle-row {
+.premium-candle-set {
   position: absolute;
-  top: 45px;
+  top: 60px;
+  /* Aligns with the top of layer-peak */
   width: 100%;
-  height: 60px;
+  height: 70px;
   z-index: 20;
 }
 
-.premium-candle {
+.cake-candle {
   position: absolute;
-  width: 8px;
-  height: 45px;
-  background: linear-gradient(to right, #fdf2f8, #fbcfe8, #fdf2f8);
-  border-radius: 4px;
+  width: 10px;
+  height: 50px;
+  background: linear-gradient(to right, #fff5f5, #fed7d7, #fff5f5);
+  border-radius: 5px;
   bottom: 0;
-  transition: all 0.5s ease;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.premium-candle.out {
+.cake-candle.blown-out {
   height: 15px;
-  filter: grayscale(1) brightness(0.5);
-  transform: scale(0.9);
+  filter: grayscale(1) brightness(0.4);
+  opacity: 0.7;
 }
 
-.candle-wick {
+.wick-stick {
   position: absolute;
-  top: -5px;
+  top: -6px;
   left: 50%;
   transform: translateX(-50%);
   width: 2px;
-  height: 8px;
-  background: #334155;
+  height: 10px;
+  background: #1e293b;
 }
 
-.flame-wrapper {
+.flame-magic {
   position: absolute;
-  top: -25px;
+  top: -28px;
   left: 50%;
   transform: translateX(-50%);
-  width: 16px;
-  height: 24px;
+  width: 18px;
+  height: 28px;
   animation: flicker 0.1s infinite alternate;
 }
 
-.flame-core {
+.flame-inner-white {
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, #ffffff, #fbbf24, #f59e0b);
+  background: radial-gradient(circle, #ffffff 10%, #fbbf24 60%, #f59e0b 100%);
   border-radius: 50% 50% 20% 20%;
-  box-shadow: 0 0 15px #fbbf24;
+  box-shadow: 0 0 20px #fbbf24;
 }
 
-.flame-outer {
+.flame-glow-aura {
   position: absolute;
-  top: -5px;
-  left: -2px;
-  width: 20px;
-  height: 30px;
-  background: rgba(251, 191, 36, 0.2);
+  top: -8px;
+  left: -4px;
+  width: 26px;
+  height: 38px;
+  background: rgba(251, 191, 36, 0.15);
   border-radius: 50% 50% 20% 20%;
-  filter: blur(5px);
+  filter: blur(8px);
 }
 
-.cake-label {
+.cake-name-plate {
   position: absolute;
-  bottom: 40px;
+  bottom: 35px;
   width: 100%;
   text-align: center;
-  z-index: 10;
-  font-size: 1.1rem;
+  z-index: 25;
+}
+
+.gold-shimmer {
+  font-size: 1.2rem;
   font-weight: 900;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, #ffd700, #fff, #ffd700);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 

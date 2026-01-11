@@ -9,63 +9,66 @@ const VirtualCake = ({ onAllOut }) => {
         newCandles[index] = false;
         setCandles(newCandles);
         if (newCandles.every(c => !c)) {
-            setTimeout(onAllOut, 2000);
+            setTimeout(onAllOut, 2500);
         }
     };
 
     return (
-        <div className="cake-container">
+        <div className="cake-stage">
             {/* The Plate */}
             <div className="cake-plate"></div>
 
-            {/* The Cake Layers (Visual Order: Top to Bottom) */}
-            <div className="cake-layers">
-                {/* Top Layer */}
-                <div className="layer layer-top">
-                    <div className="icing-drips">
-                        {[...Array(8)].map((_, i) => (
-                            <div key={i} className="drip" style={{ left: `${i * 12.5}%`, animationDelay: `${i * 0.1}s` }}></div>
+            {/* Cake Body - Built from bottom to top for correct stacking */}
+            <div className="cake-body-stack">
+                {/* Bottom Layer */}
+                <div className="cake-layer layer-base"></div>
+
+                {/* Middle Layer */}
+                <div className="cake-layer layer-mid">
+                    {/* Cherries on the middle layer shelf */}
+                    <div className="cherry-row">
+                        {[...Array(4)].map((_, i) => (
+                            <div key={i} className="cherry-item" style={{ left: `${12 + i * 25}%` }}></div>
                         ))}
                     </div>
                 </div>
-                {/* Middle Layer */}
-                <div className="layer layer-middle">
-                    {/* Cherries on top of middle layer for style */}
-                    {[...Array(4)].map((_, i) => (
-                        <div key={i} className="cherry" style={{
-                            left: `${15 + i * 23}%`,
-                            top: '-10px',
-                            animationDelay: `${i * 0.3}s`
-                        }}></div>
-                    ))}
+
+                {/* Top Layer (White Icing) */}
+                <div className="cake-layer layer-peak">
+                    {/* Filling the top with frosting */}
+                    <div className="frosting-top"></div>
+                    {/* Dripping effects */}
+                    <div className="frosting-drips">
+                        {[...Array(10)].map((_, i) => (
+                            <div key={i} className="frosting-drip" style={{ left: `${i * 10}%`, animationDelay: `${i * 0.1}s` }}></div>
+                        ))}
+                    </div>
                 </div>
-                {/* Bottom Layer */}
-                <div className="layer layer-bottom"></div>
             </div>
 
-            {/* The Candles - Positioned absolute relative to container */}
-            <div className="candle-row">
+            {/* The Candles - Positioned relative to the cake-stage */}
+            <div className="premium-candle-set">
                 {candles.map((isOn, i) => (
                     <div
                         key={i}
-                        className={`premium-candle ${!isOn ? 'out' : ''}`}
+                        className={`cake-candle ${!isOn ? 'blown-out' : ''}`}
                         onClick={() => blowOut(i)}
                         style={{ left: `${20 + i * 15}%` }}
                     >
                         {isOn && (
-                            <div className="flame-wrapper">
-                                <div className="flame-core"></div>
-                                <div className="flame-outer"></div>
+                            <div className="flame-magic">
+                                <div className="flame-inner-white"></div>
+                                <div className="flame-glow-aura"></div>
                             </div>
                         )}
-                        <div className="candle-wick"></div>
+                        <div className="wick-stick"></div>
                     </div>
                 ))}
             </div>
 
-            {/* Name Label */}
-            <div className="cake-label">
-                <span className="shimmer-text">LAVAN 💖</span>
+            {/* Lavan Name Label */}
+            <div className="cake-name-plate">
+                <span className="gold-shimmer">LAVAN ❤️</span>
             </div>
         </div>
     );
