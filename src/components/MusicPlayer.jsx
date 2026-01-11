@@ -39,7 +39,7 @@ const MusicPlayer = () => {
             <audio
                 ref={audioRef}
                 loop
-                src="https://archive.org/download/KannaanaKanney_201604/Kannaana%20Kanney.mp3" // Updated: Kannaana Kanney
+                src="https://drive.google.com/uc?export=download&id=1w_NXPwKVmo09HvW01Z1iTCR3zHE4iPxW" // Custom WhatsApp Audio
             />
         </div>
     );
