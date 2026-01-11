@@ -39,8 +39,7 @@ const MusicPlayer = () => {
             <audio
                 ref={audioRef}
                 loop
-                crossOrigin="anonymous"
-                src="https://drive.google.com/uc?export=download&id=1w_NXPwKVmo09HvW01Z1iTCR3zHE4iPxW" // Custom Audio (Direct Link)
+                src="/background-music.mp3" // Local audio to fix CORS/Forbidden errors
             />
         </div>
     );
