@@ -364,9 +364,11 @@ const App = () => {
                                 </div>
                             </div>
 
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', marginTop: '0.5rem', fontSize: 'clamp(1.1rem, 4.5vw, 1.4rem)', color: '#fff', fontWeight: '500', textAlign: 'center' }}>
-                                <p className="fade-in shimmer-text" style={{ animationDelay: '1s' }}>Thank you for every moment 💕</p>
-                                <p className="fade-in shimmer-text" style={{ animationDelay: '2s' }}>You are my greatest gift 🎁</p>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', marginTop: '0.5rem', fontSize: 'clamp(1rem, 4.5vw, 1.3rem)', color: '#fff', fontWeight: '500', textAlign: 'center', width: '100%' }}>
+                                <p className="fade-in shimmer-text" style={{ animationDelay: '1s' }}>You make me smile every day 😍</p>
+                                <p className="fade-in shimmer-text" style={{ animationDelay: '2s' }}>🎵 Your love is my favorite song 🎶</p>
+                                <p className="fade-in shimmer-text" style={{ animationDelay: '3s' }}>✨ Every moment with you is magic ✨</p>
+                                <p className="fade-in shimmer-text" style={{ animationDelay: '4s' }}>You are the best thing that ever happened to me ❤️</p>
                             </div>
 
                             <div className="float-3d" style={{ margin: '2rem 0', fontSize: 'clamp(3rem, 10vw, 4rem)' }}>🎂🎈✨</div>
@@ -396,15 +398,20 @@ const App = () => {
                     textAlign: 'center',
                     padding: '2rem'
                 }}>
-                    <div className="glow-pulse float-3d" style={{ fontSize: 'clamp(50px, 15vw, 120px)', marginBottom: '2rem' }}>💖💖💖</div>
-                    <h1 className="neon-text-pink shimmer-text wobble" style={{ fontSize: 'clamp(2.5rem, 10vw, 3.5rem)', marginBottom: '1.5rem', fontWeight: '900' }}>
-                        I LOVE YOU!
+                    <div className="glow-pulse float-3d" style={{ fontSize: 'clamp(50px, 15vw, 120px)', marginBottom: '2rem' }}>💎💍💖</div>
+                    <h1 className="neon-text-pink shimmer-text wobble" style={{ fontSize: 'clamp(2.5rem, 10vw, 4rem)', marginBottom: '1.5rem', fontWeight: '900' }}>
+                        I LOVE YOU FOREVER!
                     </h1>
-                    <p className="heartbeat-intense" style={{ fontSize: 'clamp(1.2rem, 5vw, 2rem)', color: '#fff', textShadow: '0 0 10px #ff00ff' }}>
-                        Lavan, Forever & Always... 💕✨
-                    </p>
-                    <button className="btn-primary heartbeat-intense" onClick={() => setShowFinalSecret(false)} style={{ marginTop: '3rem', padding: '1.2rem 3.5rem', fontSize: '1.2rem' }}>
-                        Close ❤️
+                    <div style={{ padding: '0 1rem' }}>
+                        <p className="heartbeat-intense" style={{ fontSize: 'clamp(1.2rem, 5vw, 1.8rem)', color: '#fff', textShadow: '0 0 10px #ff00ff', lineHeight: 1.4, marginBottom: '1rem' }}>
+                            Lavan, you are my world, my happiness, and my everything... 💕✨
+                        </p>
+                        <p className="shimmer-text" style={{ fontSize: 'clamp(1rem, 4vw, 1.4rem)', color: '#cbd5e1', fontStyle: 'italic' }}>
+                            "I promise to love you more today than yesterday, but not as much as tomorrow." ❤️💍
+                        </p>
+                    </div>
+                    <button className="btn-primary heartbeat-intense" onClick={() => setShowFinalSecret(false)} style={{ marginTop: '3rem', padding: '1.2rem 3.5rem', fontSize: '1.2rem', borderRadius: '50px' }}>
+                        Close with Love ❤️
                     </button>
                 </div>
             )}
