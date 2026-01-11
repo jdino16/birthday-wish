@@ -366,9 +366,8 @@ const App = () => {
 
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', marginTop: '0.5rem', fontSize: 'clamp(1rem, 4.5vw, 1.3rem)', color: '#fff', fontWeight: '500', textAlign: 'center', width: '100%' }}>
                                 <p className="fade-in shimmer-text" style={{ animationDelay: '1s' }}>You make me smile every day 😍</p>
-                                <p className="fade-in shimmer-text" style={{ animationDelay: '2s' }}>🎵 Your love is my favorite song 🎶</p>
-                                <p className="fade-in shimmer-text" style={{ animationDelay: '3s' }}>✨ Every moment with you is magic ✨</p>
-                                <p className="fade-in shimmer-text" style={{ animationDelay: '4s' }}>You are the best thing that ever happened to me ❤️</p>
+                                <p className="fade-in shimmer-text" style={{ animationDelay: '2s' }}>✨ Every moment with you is magic ✨</p>
+                                <p className="fade-in shimmer-text" style={{ animationDelay: '3s' }}>You are the best thing that ever happened to me ❤️</p>
                             </div>
 
                             <div className="float-3d" style={{ margin: '2rem 0', fontSize: 'clamp(3rem, 10vw, 4rem)' }}>🎂🎈✨</div>
