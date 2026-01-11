@@ -39,7 +39,7 @@ const MusicPlayer = () => {
             <audio
                 ref={audioRef}
                 loop
-                src="https://drive.google.com/uc?export=download&id=1w_NXPwKVmo09HvW01Z1iTCR3zHE4iPxW" // Custom WhatsApp Audio
+                src="https://docs.google.com/uc?id=1w_NXPwKVmo09HvW01Z1iTCR3zHE4iPxW&export=download" // Custom Audio (Stable Link)
             />
         </div>
     );
