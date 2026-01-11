@@ -293,7 +293,7 @@ const App = () => {
                                 { msg: "The First of Many ✨", sub: "Namma serndhu celebrate panra intha 1st birthday oru azhagana aarambam! Enikume neenga en pakathula irukanum... ❤️", color: "#f472b6", icon: "🌸" },
                                 { msg: "You are My Gift 🎁", sub: "Unga anbu en vazhvil kidaitha periya pokkisham. Intha azhagana bond ennikume kalaiyadha oru kavithai madhiri irukkum! 💎", color: "#fbbf24", icon: "💎" },
                                 { msg: "Pure Magic! ✨", sub: "Every single moment with you is literal magic. Everything with you feels like a beautiful dream come true! 💖", color: "#22d3ee", icon: "🌟" },
-                                { msg: "My Daily Sunshine ☀️", sub: "Neenga dhaan enna daily smile panna vaikiringa. You are my constant happiness, Lavan! 😍", color: "#ff00ff", icon: "💖" },
+                                { msg: "My Daily Smile 😍", sub: "Unga sirippu dhaan enna daily happy-aa vachirukku. You make me smile every single day, Lavan! 💖", color: "#ff00ff", icon: "💖" },
                                 { msg: "Soulful Connection 💞", sub: "Everything feels so perfect between us. Namma rendu peroda intha bond ennikume kalaiyadha oru divine connection! ✨", color: "#4ade80", icon: "🍀" },
                                 { msg: "My Forever Wish 💖", sub: "Inum neraya memories serndhu create pannanum! You are my forever wish come true. 💕✨", color: "#f43f5e", icon: "💝" }
                             ].map((item, i) => (
