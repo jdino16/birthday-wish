@@ -70,7 +70,7 @@ const App = () => {
     );
 
     return (
-        <div onClick={addSparkle} style={{ width: '100%', height: '100dvh', overflow: 'hidden' }}>
+        <div onClick={addSparkle} style={{ width: '100%', minHeight: '100dvh', position: 'relative' }}>
             <BackgroundEffects />
             <Balloons />
             <MusicPlayer />

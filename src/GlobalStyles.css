@@ -19,13 +19,20 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: auto;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: 'Outfit', sans-serif;
-  overflow-y: auto;
+  overflow-y: visible;
   overflow-x: hidden;
   background: #0f172a;
   color: #ffffff;
-  min-height: 100dvh;
 }
 
 @keyframes background-shift {
