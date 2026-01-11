@@ -131,7 +131,7 @@ const App = () => {
                         <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(1rem, 3vh, 2rem)' }}>
                             {[
                                 { icon: "❤️", text: "You make me smile every day 😍", color: "#f472b6", animation: "slide-left", delay: "0.5s" },
-                                { icon: "🎵", text: "Your love is my favorite song 🎶", color: "#22d3ee", animation: "slide-right", delay: "1.2s" },
+                                { icon: "💎", text: "Everything is better with you 💎", color: "#22d3ee", animation: "slide-right", delay: "1.2s" },
                                 { icon: "✨", text: "Every moment with you is magic ✨", color: "#fbbf24", animation: "slide-left", delay: "1.9s" }
                             ].map((moment, i) => (
                                 <div key={i} className={`glass-card ${moment.animation}`} style={{
