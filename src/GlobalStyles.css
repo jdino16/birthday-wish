@@ -60,9 +60,21 @@ body {
   align-items: center;
   background: var(--bg-gradient);
   background-size: 400% 400%;
-  animation: background-shift 15s ease infinite;
+  animation: background-shift 15s ease infinite, ambient-pulse 8s infinite ease-in-out;
   background-attachment: fixed;
   overflow: visible !important;
+}
+
+@keyframes ambient-pulse {
+
+  0%,
+  100% {
+    filter: brightness(1) saturate(1);
+  }
+
+  50% {
+    filter: brightness(1.2) saturate(1.1);
+  }
 }
 
 .page-container {
