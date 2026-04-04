@@ -8,6 +8,11 @@ import VirtualCake from './components/VirtualCake';
 import CurtainReveal from './components/CurtainReveal';
 import ScratchCard from './components/ScratchCard';
 import Balloons from './components/Balloons';
+import BirthdayLetter from './components/BirthdayLetter';
+import MemoryGame from './components/MemoryGame';
+import LoveJar from './components/LoveJar';
+import PhotoStrip from './components/PhotoStrip';
+import PandaDoorReveal from './components/PandaDoorReveal';
 
 const App = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -43,7 +48,7 @@ const App = () => {
     };
 
     useEffect(() => {
-        if (currentPage === 3) {
+        if (currentPage === 5) {
             const interval = setInterval(() => {
                 const newHeart = {
                     id: Date.now(),
@@ -78,7 +83,10 @@ const App = () => {
             <BackgroundEffects />
             <Balloons />
             <MusicPlayer />
-            {currentPage === 4 && <Confetti />}
+            {currentPage === 6 && <Confetti />}
+
+            {/* Progress Bar */}
+            <div className="page-progress" style={{ width: `${(currentPage / 10) * 100}%` }} />
 
             {sparkles.map(s => (
                 <div key={s.id} className="fade-in" style={{
@@ -93,80 +101,128 @@ const App = () => {
             ))}
 
             <div className="page-container">
-                {/* Page 1: Welcome */}
+                {/* Page 1: Panda Door Surprise */}
                 {currentPage === 1 && (
-                    <div className="fade-in" style={{ zIndex: 20 }}>
-                        <h1 className="neon-text-pink shimmer-text glow-pulse wobble" style={{ fontFamily: "'Dancing Script', cursive", fontSize: 'clamp(2.5rem, 8vw, 4rem)', marginBottom: '0.5rem', lineHeight: 1 }}>
-                            Happy Birthday Lavan!
+                    <div className="fade-in" style={{ zIndex: 20, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <h1 className="neon-text-pink shimmer-text glow-pulse wobble" style={{ fontFamily: "'Dancing Script', cursive", fontSize: 'clamp(2.2rem, 8vw, 3.8rem)', marginBottom: '0.5rem', lineHeight: 1.1 }}>
+                            Happy Birthday{'\n'}<br />My Lovely Darling 💕
                         </h1>
-                        <div className="pulse heartbeat-intense" style={{ fontSize: '3rem', marginBottom: '1.5rem' }}>🎉🤍</div>
+                        <div className="pulse heartbeat-intense" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🎂🎉</div>
 
                         {!canStart ? (
-                            <div className="fade-in glass-card bounce-in" style={{ width: '90%', maxWidth: '480px', padding: '2.5rem', borderRadius: '40px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                                <p style={{ marginBottom: '1.5rem', color: '#fff', fontSize: '1.2rem', fontWeight: '600', letterSpacing: '0.5px' }}>
-                                    Make a wish and blow out the candles! 🎂✨
-                                </p>
-                                <div className="bounce-in">
-                                    <VirtualCake onAllOut={() => setCanStart(true)} />
+                            <PandaDoorReveal onOpen={() => setCanStart(true)}>
+                                {/* Content inside the doors */}
+                                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', padding: '1rem' }}>
+                                    <img
+                                        src="/envelope_wax_seal.png"
+                                        alt="Surprise"
+                                        style={{
+                                            width: 'clamp(120px, 40vw, 200px)',
+                                            height: 'auto',
+                                            borderRadius: '15px',
+                                            filter: 'drop-shadow(0 10px 20px rgba(219,39,119,0.4))',
+                                            animation: 'float-3d 4s ease-in-out infinite'
+                                        }}
+                                    />
+                                    <p className="shimmer-text" style={{
+                                        fontSize: 'clamp(1rem, 4vw, 1.4rem)',
+                                        fontWeight: '700',
+                                        color: '#fff',
+                                    }}>
+                                        A surprise awaits you! 🎁✨
+                                    </p>
+                                    <div className="heartbeat-intense" style={{ fontSize: '2.5rem' }}>🎀</div>
                                 </div>
-                            </div>
+                            </PandaDoorReveal>
                         ) : (
-                            <div className="fade-in">
-                                <p className="neon-text-gold pulse heartbeat-intense" style={{ fontSize: '2rem', color: '#fff', marginBottom: '2.5rem', fontWeight: '600' }}>
-                                    Your wish is coming true... ✨
-                                </p>
-                                <button className="btn-primary heartbeat-intense" onClick={nextStep}>
-                                    Open Your Surprise 🎁
-                                </button>
+                            <div className="fade-in" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem', width: '100%' }}>
+                                {/* Cake Section */}
+                                <div className="glass-card bounce-in" style={{ width: '90%', maxWidth: '480px', padding: '2rem', borderRadius: '40px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                                    <p style={{ marginBottom: '1rem', color: '#fff', fontSize: '1.1rem', fontWeight: '600' }}>
+                                        Make a wish and blow out the candles! 🎂✨
+                                    </p>
+                                    <VirtualCake onAllOut={() => nextStep()} />
+                                </div>
+
+                                {/* Realistic Cake Image */}
+                                <div style={{
+                                    borderRadius: '25px',
+                                    overflow: 'hidden',
+                                    boxShadow: '0 20px 60px rgba(244,114,182,0.5), 0 0 40px rgba(251,191,36,0.3)',
+                                    border: '3px solid rgba(251,191,36,0.4)',
+                                    maxWidth: '240px',
+                                    animation: 'float-3d 4s ease-in-out infinite'
+                                }}>
+                                    <img src="/cake_realistic.png" alt="Birthday Cake" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                                </div>
                             </div>
                         )}
                     </div>
                 )}
 
-                {/* Page 2: Special Moments */}
+                {/* Page 2: Birthday Letter */}
                 {currentPage === 2 && (
-                    <div className="fade-in" style={{ width: '100%', maxWidth: '700px', margin: '0 auto' }}>
-                        <h2 className="neon-text-gold shimmer-text glow-pulse wobble" style={{ marginBottom: 'clamp(1.5rem, 5vh, 3rem)', fontSize: 'clamp(2rem, 7vw, 3.5rem)' }}>Our Special Moments 💖</h2>
+                    <div className="fade-in" style={{ width: '100%', maxWidth: '680px', margin: '0 auto' }}>
+                        <h2 className="neon-text-gold shimmer-text glow-pulse wobble" style={{ marginBottom: 'clamp(1rem, 4vh, 2rem)', fontSize: 'clamp(1.8rem, 7vw, 3rem)' }}>
+                            Birthday Letter for You... 💌
+                        </h2>
+                        <BirthdayLetter />
+                        <button className="btn-primary" onClick={nextStep} style={{ marginTop: 'clamp(2rem, 5vh, 3rem)' }}>
+                            Next → A Little Game First 🎮
+                        </button>
+                    </div>
+                )}
 
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(1rem, 3vh, 2rem)' }}>
-                            {[
-                                { icon: "🤍", text: "You make me smile every day 😍", color: "#f472b6", animation: "slide-left", delay: "0.5s" },
-                                { icon: "💎", text: "Everything is better with you 💎", color: "#22d3ee", animation: "slide-right", delay: "1.2s" },
-                                { icon: "🫶", text: "Every moment with you is magic ✨", color: "#fbbf24", animation: "slide-left", delay: "1.9s" }
-                            ].map((moment, i) => (
-                                <div key={i} className={`glass-card ${moment.animation}`} style={{
-                                    animationDelay: moment.delay,
-                                    width: '100%',
-                                    padding: 'clamp(1rem, 3vh, 1.5rem) clamp(1rem, 4vw, 2rem)',
-                                    borderRadius: '25px',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: 'clamp(0.8rem, 3vw, 1.5rem)',
-                                    borderLeft: `8px solid ${moment.color}`,
-                                    background: 'rgba(255, 255, 255, 0.08)',
-                                    opacity: 0,
-                                    textAlign: 'left'
-                                }}>
-                                    <div className="glow-pulse heartbeat-intense" style={{ fontSize: '2.5rem' }}>{moment.icon}</div>
-                                    <p className="wobble" style={{ fontSize: '1.3rem', fontWeight: '700', color: '#fff' }}>{moment.text}</p>
-                                </div>
-                            ))}
-                        </div>
+                {/* Page 3 (old): Proposal — now shifted to 4 — insert Memory Game as page 3 */}
+                {currentPage === 3 && (
+                    <div className="fade-in" style={{ width: '100%', maxWidth: '680px', margin: '0 auto' }}>
+                        <h2 className="neon-text-pink shimmer-text glow-pulse wobble" style={{ marginBottom: 'clamp(0.8rem, 3vh, 1.5rem)', fontSize: 'clamp(1.8rem, 7vw, 3rem)' }}>
+                            Small Game First... 🎮
+                        </h2>
+                        <p style={{ color: '#94a3b8', marginBottom: '1.5rem', fontSize: '0.95rem' }}>
+                            Let's play a memory game! Find all matching pairs before time runs out! 🎯
+                        </p>
+                        <MemoryGame onWin={() => {}} />
+                        <button className="btn-primary" onClick={nextStep} style={{ marginTop: 'clamp(1.5rem, 4vh, 2.5rem)' }}>
+                            Skip → Our Memories 📸
+                        </button>
+                    </div>
+                )}
 
-                        <button className="btn-primary" onClick={nextStep} style={{ marginTop: 'clamp(2rem, 5vh, 3.5rem)' }}>
+                {/* Page 3.5: Photo Memories */}
+                {currentPage === 4 && (
+                    <div className="fade-in" style={{ width: '100%', maxWidth: '680px', margin: '0 auto' }}>
+                        <h2 className="neon-text-gold shimmer-text glow-pulse wobble" style={{ marginBottom: 'clamp(1rem, 4vh, 2rem)', fontSize: 'clamp(1.8rem, 7vw, 3rem)' }}>
+                            Our Beautiful Memories 📸
+                        </h2>
+                        <PhotoStrip />
+                        <button className="btn-primary" onClick={nextStep} style={{ marginTop: 'clamp(2rem, 5vh, 3rem)' }}>
                             Next → Surprise 💌
                         </button>
                     </div>
                 )}
 
-                {/* Page 3: Proposal */}
-                {currentPage === 3 && (
+                {/* Page 5: Proposal */}
+                {currentPage === 5 && (
                     <div className="fade-in" style={{ width: '100%', margin: '0 auto', position: 'relative' }}>
                         {proposalHearts.map(h => (
                             <div key={h.id} className="proposal-heart" style={{ left: h.left, bottom: '-50px' }}>{h.emoji}</div>
                         ))}
 
-                        <h1 className="neon-text-pink heartbeat-intense glow-pulse wobble" style={{ marginBottom: '2rem', fontSize: 'clamp(2.2rem, 7vw, 4rem)' }}>
+                        {/* My Man Image */}
+                        <div style={{
+                            borderRadius: '25px',
+                            overflow: 'hidden',
+                            maxWidth: '320px',
+                            margin: '0 auto 1.5rem',
+                            boxShadow: '0 15px 40px rgba(244,114,182,0.4)',
+                            border: '3px solid rgba(244,114,182,0.3)',
+                            animation: 'float-3d 5s ease-in-out infinite'
+                        }}>
+                            <img src="/my_man_hearts.png" alt="My Man" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                        </div>
+
+                        <h1 className="neon-text-pink heartbeat-intense glow-pulse wobble" style={{ marginBottom: '1.5rem', fontSize: 'clamp(2.2rem, 7vw, 4rem)' }}>
                             Will you be mine forever? <span className="heartbeat-intense">🤍</span>
                         </h1>
 
@@ -222,24 +278,39 @@ const App = () => {
                     </div>
                 )}
 
-                {/* Page 4: Celebration */}
-                {currentPage === 4 && (
-                    <div className="fade-in" style={{ margin: '0 auto' }}>
-                        <h1 className="neon-text-gold pulse shimmer-text glow-pulse" style={{ fontSize: 'clamp(2.5rem, 8vw, 4rem)', marginBottom: '1.5rem' }}>
+                {/* Page 6: Celebration */}
+                {currentPage === 6 && (
+                    <div className="fade-in" style={{ margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <h1 className="neon-text-gold pulse shimmer-text glow-pulse" style={{ fontSize: 'clamp(2.2rem, 8vw, 3.5rem)', marginBottom: '1rem' }}>
                             You Made Me the Happiest! 🫶🤍
                         </h1>
-                        <div className="float-3d" style={{ fontSize: 'clamp(60px, 15vw, 100px)', margin: '2rem 0' }}>🎂🍰🥂</div>
-                        <p className="wobble" style={{ fontSize: 'clamp(1.4rem, 5vw, 2rem)', color: '#fff', textShadow: '0 2px 15px rgba(0,0,0,0.5)', fontWeight: '600' }}>
+
+                        {/* Romantic Couple Image */}
+                        <div style={{
+                            borderRadius: '50%',
+                            overflow: 'hidden',
+                            width: 'clamp(180px, 40vw, 260px)',
+                            height: 'clamp(180px, 40vw, 260px)',
+                            margin: '1rem 0',
+                            boxShadow: '0 0 40px rgba(244,114,182,0.5), 0 0 80px rgba(251,191,36,0.3)',
+                            border: '4px solid rgba(251,191,36,0.5)',
+                            animation: 'float-3d 5s ease-in-out infinite'
+                        }}>
+                            <img src="/romantic_couple.png" alt="Us" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        </div>
+
+                        <div className="float-3d" style={{ fontSize: 'clamp(40px, 12vw, 70px)', margin: '1rem 0' }}>🎂🍰🥂</div>
+                        <p className="wobble" style={{ fontSize: 'clamp(1.3rem, 5vw, 1.8rem)', color: '#fff', textShadow: '0 2px 15px rgba(0,0,0,0.5)', fontWeight: '600' }}>
                             Thank you for saying YES! 🤍
                         </p>
-                        <button className="btn-primary heartbeat-intense" onClick={nextStep} style={{ marginTop: '3.5rem' }}>
+                        <button className="btn-primary heartbeat-intense" onClick={nextStep} style={{ marginTop: '2.5rem' }}>
                             Next → Our Future Plans ✨
                         </button>
                     </div>
                 )}
 
-                {/* Page 5: Future Plans */}
-                {currentPage === 5 && (
+                {/* Page 7: Future Plans */}
+                {currentPage === 7 && (
                     <div className="fade-in" style={{ width: '100%', maxWidth: '750px', margin: '0 auto' }}>
                         <h1 className="neon-text-pink shimmer-text glow-pulse wobble" style={{ marginBottom: 'clamp(1.5rem, 5vh, 2.5rem)', fontSize: 'clamp(1.8rem, 7vw, 3rem)' }}>Our Beautiful Future Together ✨</h1>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(1rem, 3vh, 2rem)' }}>
@@ -272,13 +343,29 @@ const App = () => {
                             ))}
                         </div>
                         <button className="btn-primary" onClick={nextStep} style={{ marginTop: 'clamp(2rem, 5vh, 3.5rem)' }}>
+                            Next → Love Jar 💕
+                        </button>
+                    </div>
+                )}
+
+                {/* Page 8: Love Jar */}
+                {currentPage === 8 && (
+                    <div className="fade-in" style={{ width: '100%', maxWidth: '680px', margin: '0 auto' }}>
+                        <h2 className="neon-text-pink shimmer-text glow-pulse wobble" style={{ marginBottom: 'clamp(1rem, 4vh, 2rem)', fontSize: 'clamp(1.8rem, 7vw, 3rem)' }}>
+                            Love Jar 💕
+                        </h2>
+                        <p style={{ color: '#94a3b8', marginBottom: '1.5rem', fontSize: '0.95rem' }}>
+                            Things I love about you... Tap each heart! 🤍
+                        </p>
+                        <LoveJar />
+                        <button className="btn-primary" onClick={nextStep} style={{ marginTop: 'clamp(2rem, 5vh, 3rem)' }}>
                             Next → Messages & Wishes 💌
                         </button>
                     </div>
                 )}
 
-                {/* Page 6: Messages & Wishes */}
-                {currentPage === 6 && (
+                {/* Page 9: Messages & Wishes */}
+                {currentPage === 9 && (
                     <div className="fade-in" style={{ width: '100%', maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <h1 className="neon-text-gold shimmer-text glow-pulse wobble" style={{ marginBottom: 'clamp(1rem, 3vh, 2rem)', fontSize: 'clamp(1.6rem, 7vw, 3rem)' }}>Messages & Birthday Wishes 🤍</h1>
 
@@ -326,8 +413,8 @@ const App = () => {
                     </div>
                 )}
 
-                {/* Page 7: Final Thank You */}
-                {currentPage === 7 && (
+                {/* Page 10: Final Thank You */}
+                {currentPage === 10 && (
                     <div className="fade-in" style={{
                         width: '100%',
                         minHeight: '80vh',
